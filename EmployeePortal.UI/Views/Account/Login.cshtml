@@ -24,7 +24,7 @@
         <p><a asp-area="" asp-controller="Account" asp-action="Register">Create a New Account</a></p>
     </form>
 </div> *@
-<div class="container my-3">
+@* <div class="container my-3 h-100">
     <div class="row">
         <div class="ml-offset col-lg-5 col-md-6 offeset-lg-4 offset-md-3">
             <div class="panel border bg-white py-2">
@@ -62,6 +62,62 @@
                     </div>
                     <div class="text-center py-3 text-muted">Don't have an Account?<a id="forget" href="/Account/Register" .021>Create an Account</a></div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="~/images/login.jpg"
+                             alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    </div>
+                    <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">
+
+                            <form asp-action="Login" method="post" class="login-form">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="d-flex align-items-center mb-3 pb-1">
+                                    <i class="fas fa-sign-in fa-2x me-3" style="color: #ff6219;"></i>
+
+                                    <span class="h1 fw-bold mb-0">@ViewData["Title"]</span>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span class="fa fa-user"></span>
+                                    <label asp-for="Username" class="form-label">User Name</label>
+                                    <b><span class="text-danger">*</span></b>
+                                    <input asp-for="Username" type="text" class="form-control form-control-lg" />
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span class="fa fa-lock"></span>
+                                    <label asp-for="Password" class="form-label">Password</label>
+                                    <b><span class="text-danger">*</span></b>
+                                    <input asp-for="Password" type="password" class="form-control form-control-lg" />
+                                </div>
+
+                                <div class="pt-1 mb-4 d-grid gap-2">
+
+                                    <button class="btn btn-success btn-lg btn-block " type="submit">Login</button>
+                                </div>
+
+                                <a class="small text-muted" href="#!">Forgot password?</a>
+                                <p class="mb-2 pb-lg-2" style="color: #393f81;">
+                                    Don't have an account? <a href="/Account/Register"
+                                                              style="color: #393f81;">Register here</a>
+                                </p>
+                                <a href="#!" class="small text-muted">Terms of use.</a>
+                                <a href="#!" class="small text-muted">Privacy policy</a>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
